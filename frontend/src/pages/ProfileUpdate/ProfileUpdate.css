@@ -1,0 +1,248 @@
+/* src/ProfileUpdate.css */
+    .profile-page-container {
+        min-height: 100vh;
+        background: url('/background.png') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: items; /* p-4 */
+        font-family: 'Inter', sans-serf; /*Assumes Inter font is loaded globally in index.css */
+}
+
+/* Responsive padding for smaller screens */
+@media (min-width: 640px) { /* sm:p-6 */
+    .profile-page-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) { /* lg:p-8 */
+    .profile-page-container {
+        padding: 2rem;
+    }
+}
+
+/* Styles for the white content card */
+    .profile-card {
+        background-color: white;
+        border-radius: 0.5rem; /* rounded-lg */
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
+        padding: 1.5rem; /* p-6 */
+        width: 100%;
+        max-width: 56rem; /* max-w-4xl (896px) */
+}
+
+/* Responsive padding for the card */
+@media (min-width: 640px) { /* sm:p-8 */
+    .profile-card {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 1024px) { /* lg:p-10 */
+    .profile-card {
+        padding: 2.5rem;
+    }
+}
+
+/* Styles for the main heading */
+    .profile-header {
+        font-size: 1.875rem; /* text-3xl */
+        font-weight: 700; /* font-bold */
+        color: #1f2937; /* text-gray-800 */
+        margin-bottom: 2rem; /* mb-8 */
+        text-align: center;
+}
+
+/* Container for avatar and form sections */
+    .profile-sections-wrapper {
+        display: flex;
+        flex-direction: column; /* flex-col */
+        gap: 2rem; /* gap-8 */
+}
+
+/* Responsive layout for avatar and form sections */
+@media (min-width: 768px) { /* md:flex-row */
+    .profile-sections-wrapper {
+        flex-direction: row;
+    }
+}
+
+/* Avatar upload section */
+    .profile-avatar-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 1rem; /* py-4 */
+        padding-bottom: 1rem; /* py-4 */
+}
+
+@media (min-width: 768px) { /* md:w-1/3 */
+    .profile-avatar-section {
+        width: 33.333333%;
+    }
+}
+
+/* Avatar image container */
+    .avatar-container {
+        position: relative;
+        width: 8rem; /* w-32 */
+        height: 8rem; /* h-32 */
+        border-radius: 9999px; /* rounded-full */
+        overflow: hidden;
+        border: 4px solid #d8b4fe; /* border-purple-300 */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+/* Avatar image */
+    .avatar-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+
+/* Avatar overlay for hover effect */
+    .avatar-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; /* inset-0 */
+        background-color: rgba(0, 0, 0, 0.4); /* bg-black bg-opacity-40 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out; /* transition-opacity duration-300 */
+        cursor: pointer;
+}
+
+    .avatar-overlay:hover {
+        opacity: 1;
+}
+
+/* Text below avatar */
+    .avatar-text {
+        font-size: 0.875rem; /* text-sm */
+        color: #6b7280; /* text-gray-500 */
+        margin-top: 1rem; /* mt-4 */
+        text-align: center;
+}
+
+/* Profile form section */
+/* .profile-form-section {
+    
+} */
+
+@media (min-width: 768px) { /* md:w-2/3 */
+    .profile-form-section {
+        width: 66.666667%;
+    }
+}
+
+/* Profile form */
+    .profile-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem; /* space-y-6 */
+}
+
+/* Input field label */
+    .input-label {
+        display: block;
+        font-size: 0.875rem; /* text-sm */
+        font-weight: 500; /* font-medium */
+        color: #374151; /* text-gray-700 */
+        margin-bottom: 0.25rem; /* mb-1 */
+}
+
+/* Input field container */
+    .input-container {
+        margin-top: 0.25rem; /* mt-1 */
+        position: relative;
+        order-radius: 0.375rem; /* rounded-md */
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+/* Input and textarea common styles */
+    .form-input-field {
+        flex: 1; /* flex-1 */
+        display: block;
+        width: 100%;
+        border-radius: 0.375rem; /* rounded-md */
+        border: 1px solid #d1d5db; /* border-gray-300 */
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+        font-size: 0.875rem; /* sm:text-sm */
+        padding: 0.75rem; /* p-3 */
+        transition: all 0.15s ease-in-out; /* transition duration-150 ease-in-out */
+        outline: none; /* focus:outline-none */
+}
+
+/* Input field focus styles */
+    .form-input-field:focus {
+        border-color: #8b5cf6; /* focus:border-purple-500 */
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.5); /* focus:ring-purple-500 */
+}
+
+/* Input field with icon padding */
+    .form-input-field.has-icon {
+        padding-left: 2.5rem; /* pl-10 */
+}
+
+/* Textarea specific styles */
+    textarea.form-input-field {
+        resize: vertical; /* resize-y */
+}
+
+/* Input icon wrapper */
+    .input-icon-wrapper {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0; /* inset-y-0 left-0 */
+        padding-left: 0.75rem; /* pl-3 */
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+}
+
+/* Button container */
+    .button-container {
+        display: flex;
+        justify-content: flex-end; /* justify-end */
+        padding-top: 1rem; /* pt-4 */
+}
+
+/* Button styles */
+    .custom-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem; /* px-6 py-3 */
+        border: 1px solid transparent; /* border border-transparent */
+        font-size: 1rem; /* text-base */
+        font-weight: 500; /* font-medium */
+        border-radius: 0.375rem; /* rounded-md */
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+        color: white; /* text-white */
+        background-color: #9333ea; /* bg-purple-600 */
+        transition: all 0.15s ease-in-out; /* transition duration-150 ease-in-out */
+        transform: scale(1); /* transform */
+        cursor: pointer;
+}
+
+    .custom-button:hover {
+        background-color: #7e22ce; /* hover:bg-purple-700 */
+        transform: scale(1.05); /* hover:scale-105 */
+}
+
+    .custom-button:active {
+        transform: scale(0.95); /* active:scale-95 */
+}
+
+    .custom-button:focus {
+        outline: none; /* focus:outline-none */
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px #8b5cf6; /* focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 */
+}
